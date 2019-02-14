@@ -1,0 +1,59 @@
+body {
+    background: lemonchiffon;
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "aside main main main"
+    "aside main main main"
+    "aside main main main";
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+header {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    text-align: center;
+
+}
+main {
+    grid-row: 2 / span 3;
+    grid-column: 2 / span 3;
+    display: grid;
+    grid-template-areas:
+    "green red"
+    "yellow blue";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+aside {
+    grid-column: 1;
+    grid-row: 2 / span 4;
+}
+#red {
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin: 5px;
+    
+
+}
+#green {
+    height: 100px;
+    width: 100px;
+    background: green;
+    margin: 5px;
+}
+#blue {
+    height: 100px;
+    width: 100px;
+    background: blue;
+    margin: 5px;
+}
+#yellow {
+    height: 100px;
+    width: 100px;
+    background: yellow;
+    margin: 5px;
+}
