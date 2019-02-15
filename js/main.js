@@ -23,7 +23,9 @@ function gameStart() {
     correctAnswers.push(Math.floor(Math.random() * 4))
     currentColor = (correctAnswers[correctAnswers.length-1])
     $("#playarea > ." + currentColor).addClass("flashit")
-    
+    setTimeout(function() {
+        $("#playarea > ." + currentColor).removeClass("flashit")
+    }, 500)
     //$.when(playerTurn()).done(scoringTurn())
     // playerTurn()
     // currentAnswers.push(roundAnswer)
@@ -57,19 +59,19 @@ function incorrect() {
     })
     $("#playarea > #green").on('click', function () {
         console.log("Green has been clicked")
-        currentAnswers.push(0)
+        currentAnswers.push(1)
         $("#playarea > #green").addClass("flashit")
         scoringTurn()
     })
     $("#playarea > #blue").on('click', function () {
         console.log("Blue has been clicked")
-        currentAnswers.push(0)
+        currentAnswers.push(2)
         $("#playarea > #blue").addClass("flashit")
         scoringTurn()
     })
     $("#playarea > #yellow").on('click', function () {
         console.log("Yellow has been clicked")
-        currentAnswers.push(0)
+        currentAnswers.push(3)
         $("#playarea > #yellow").addClass("flashit")
         scoringTurn()
     })
@@ -77,17 +79,19 @@ function incorrect() {
 
 
 function scoringTurn() {
-    if (roundAnswer === (correctAnswers.length - 1)) {
+    currentAnswers.forEach(function(i)  {
+        if (correctAnswers[i] === currentAnswers[i]){
         console.log("Correct!")
         score += 1
         $("#aside > .score").text(`Score: ${score}`)
+        }
         //roundStart()
         // $.when(scoringTurn()).done(roundStart())
-
-    }
-    else {
-        console.log("Incorrect")
-        incorrect()
-    }
+        else {
+            console.log("Incorrect")
+            incorrect()
+        }
+    })
+    
 
 }
