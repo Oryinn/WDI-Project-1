@@ -22,10 +22,12 @@ let roundAnswer = 0
 function gameStart() {
     correctAnswers.push(Math.floor(Math.random() * 4))
     currentColor = (correctAnswers[correctAnswers.length-1])
+    setTimeout(function() {
     $("#playarea > ." + currentColor).addClass("flashit")
+}, 500)
     setTimeout(function() {
         $("#playarea > ." + currentColor).removeClass("flashit")
-    }, 500)
+    }, 1000)
     //$.when(playerTurn()).done(scoringTurn())
     // playerTurn()
     // currentAnswers.push(roundAnswer)
@@ -79,11 +81,9 @@ function incorrect() {
 
 
 function scoringTurn() {
-    currentAnswers.forEach(function(i)  {
-        if (correctAnswers[i] === currentAnswers[i]){
-        console.log("Correct!")
-        score += 1
-        $("#aside > .score").text(`Score: ${score}`)
+    currentAnswers.forEach(function(array, i)  {
+        if (array === currentAnswers[i]){
+        return
         }
         //roundStart()
         // $.when(scoringTurn()).done(roundStart())
@@ -92,6 +92,10 @@ function scoringTurn() {
             incorrect()
         }
     })
+    console.log("Correct!")
+        score += 1
+        $("#aside > .score").text(`Score: ${score}`)
+    gameStart()
     
 
 }
