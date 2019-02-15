@@ -57,3 +57,23 @@ aside {
     background: yellow;
     margin: 5px;
 }
+.hide {
+    display: hidden;
+}
+
+.flashit{
+    color:#f2f;
+      -webkit-animation: flash linear 1s ;
+      animation: flash linear 1s;
+      animation-iteration-count: 1;
+  }
+  @-webkit-keyframes flash {
+      0% { opacity: 1; } 
+      50% { opacity: .1; } 
+      100% { opacity: 1; }
+  }
+  @keyframes flash {
+      0% { opacity: 1; } 
+      50% { opacity: .1; } 
+      100% { opacity: 1; }
+  }
