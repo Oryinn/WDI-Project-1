@@ -13,89 +13,58 @@ scoring turn function checks if the answer is correct by comparing the arrays of
 when scoring function is done use a promise method to go to round start function (if correct) or incorrect function(if incorrect
 round start function should also move into the player turn function
 */
-let correctAnswers = []
-let currentAnswers = []
-let score = 0
-let currentColor = 0
-let roundAnswer = 0
+correctAnswers = [];
+currentAnswers = [];
+score = 0;
 
-function gameStart() {
-    correctAnswers.push(Math.floor(Math.random() * 4))
-    currentColor = (correctAnswers[correctAnswers.length-1])
-    setTimeout(function() {
-    $("#playarea > ." + currentColor).addClass("flashit")
-}, 500)
-    setTimeout(function() {
-        $("#playarea > ." + currentColor).removeClass("flashit")
-    }, 1000)
-    //$.when(playerTurn()).done(scoringTurn())
-    // playerTurn()
-    // currentAnswers.push(roundAnswer)
-    // scoringTurn()
+function gameLoop() {
+    $("#score").text(score);
+    //On every new round, clear the current answers
+    correctAnswers.push(Math.floor(Math.random() * 4));
+    flashCorrectAnswers();
 }
 
-$("#aside > #start").on('click', function () {
-    gameStart()
-    $("#aside > #start").hide()
-})
-function roundStart() {
-    correctAnswers.push(Math.floor(Math.random() * 4))
-
+function flashCorrectAnswers() {
     for (let i = 0; i < correctAnswers.length; i++) {
-
+        setTimeout(() => {
+            flashButton(correctAnswers[i]);
+        }, (i+1) * 1000);
     }
 }
 
-function incorrect() {
-    score = 0
-
-
+function flashButton(id) {
+    const selectedSquare = $("#" + id);
+    selectedSquare.css('opacity', '.3');
+    setTimeout(() => {
+        selectedSquare.css('opacity', '1');
+    }, 600);
 }
 
-    $("#playarea > #red").on('click', function () {
-        console.log("Red has been clicked")
-        currentAnswers.push(0)
-        $("#playarea > #red").addClass("flashit")
-        scoringTurn()
-        
-    })
-    $("#playarea > #green").on('click', function () {
-        console.log("Green has been clicked")
-        currentAnswers.push(1)
-        $("#playarea > #green").addClass("flashit")
-        scoringTurn()
-    })
-    $("#playarea > #blue").on('click', function () {
-        console.log("Blue has been clicked")
-        currentAnswers.push(2)
-        $("#playarea > #blue").addClass("flashit")
-        scoringTurn()
-    })
-    $("#playarea > #yellow").on('click', function () {
-        console.log("Yellow has been clicked")
-        currentAnswers.push(3)
-        $("#playarea > #yellow").addClass("flashit")
-        scoringTurn()
-    })
-    
-
-
-function scoringTurn() {
-    currentAnswers.forEach(function(array, i)  {
-        if (array === currentAnswers[i]){
-        return
+function checkScore() {
+    let correctAnswersSubArray = correctAnswers.slice(0, currentAnswers.length);
+    correctAnswersSubArray.forEach((value, index) => {
+        if (value !== currentAnswers[index]) {
+            console.log("Create a loss message later")
         }
-        //roundStart()
-        // $.when(scoringTurn()).done(roundStart())
-        else {
-            console.log("Incorrect")
-            incorrect()
-        }
-    })
-    console.log("Correct!")
-        score += 1
-        $("#aside > .score").text(`Score: ${score}`)
-    gameStart()
-    
-
+    });
+    if (correctAnswers.length === correctAnswersSubArray.length) {
+        setTimeout(() => {
+            currentAnswers = [];
+            score++;
+            gameLoop();
+        }, 1000);
+    }
 }
+
+
+//Event Listeners
+$("#aside > #start").on('click', function () {
+    gameLoop();
+    $("#aside > #start").hide();
+});
+
+$(".gameButton").on('click', function () {
+    flashButton(this.id);
+    currentAnswers.push(parseInt(this.id));
+    checkScore();
+});
