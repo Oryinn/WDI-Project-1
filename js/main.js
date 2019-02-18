@@ -44,7 +44,7 @@ function checkScore() {
     let correctAnswersSubArray = correctAnswers.slice(0, currentAnswers.length);
     correctAnswersSubArray.forEach((value, index) => {
         if (value !== currentAnswers[index]) {
-            console.log("Create a loss message later")
+            loss()
         }
     });
     if (correctAnswers.length === correctAnswersSubArray.length) {
@@ -54,6 +54,12 @@ function checkScore() {
             gameLoop();
         }, 1000);
     }
+}
+
+function loss() {
+    alert("You lost - make this not use an alert later")
+    score = 0
+    $("#aside > #start").show();
 }
 
 
