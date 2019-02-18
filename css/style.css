@@ -36,6 +36,7 @@ aside {
     width: 100px;
     background: red;
     margin: 5px;
+    z-index: 1;
     
 
 }
@@ -44,19 +45,29 @@ aside {
     width: 100px;
     background: green;
     margin: 5px;
+    z-index: 1;
 }
 .blue {
     height: 100px;
     width: 100px;
     background: blue;
     margin: 5px;
+    z-index: 1;
 }
 .yellow {
     height: 100px;
     width: 100px;
     background: yellow;
     margin: 5px;
+    z-index: 1;
 }
 .hide {
     display: hidden;
+}
+.loser {
+    width: 500px;
+    height: 500px;
+    z-index: 11;
+    display: inline;
+    position: relative;
 }
