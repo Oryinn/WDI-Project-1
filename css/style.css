@@ -1,5 +1,5 @@
 body {
-    background: lemonchiffon;
+    background: #607d8b;
     display: grid;
     grid-template-areas: 
     "header header header header"
@@ -7,11 +7,15 @@ body {
     "aside main main main";
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }
 header {
     grid-column: 1 / span 4;
     grid-row: 1;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    
+
 
 }
 main {
@@ -29,6 +33,7 @@ main {
 aside {
     grid-column: 1;
     grid-row: 2 / span 4;
+    font-family: 'Open Sans', sans-serif;
 }
 .red {
     height: 100px;
