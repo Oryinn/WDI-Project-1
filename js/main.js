@@ -40,9 +40,8 @@ function checkScore() {
     }
 }
 function loss() {
-    //let lossAudio = $(".losersound");
-    //lossAudio.trigger('play');
-    if (score > highscore){
+
+    if (score > highscore) {
         highscore = score;
         $("#hiscore").text(highscore);
     }
@@ -51,6 +50,11 @@ function loss() {
     correctAnswers = []
     $("#aside > #start").show();
     $(".gameButton").hide();
+    setTimeout(() => {
+        let lossAudio = $(".losersound");
+        lossAudio.trigger('play');
+    }, 200)
+
 }
 $("#aside > #start").on('click', function () {
     gameLoop();
