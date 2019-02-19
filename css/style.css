@@ -65,9 +65,11 @@ aside {
     display: hidden;
 }
 .loser {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 4;
     z-index: 11;
-    display: inline;
+    display: none;
     position: relative;
 }

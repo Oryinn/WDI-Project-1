@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WDI Says</title>
     <link rel="stylesheet" href="css/style.css">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script defer src="js/main.js"></script>
 </head>
+
 <body>
     <header>
         <h1>WDI Says</h1>
     </header>
     <aside id="aside">
+        <div class="hiscore">High Score: <span id="hiscore">0</span>
+        </div>
         <div class="score">
-        Score: <span id="score">0</span>
+            Score: <span id="score">0</span>
         </div>
         <br>
         <button id="start">Start Game!</button>
     </aside>
     <main id="playarea">
-        <span class="loser">You lost
-            <button class="playagain">Play again</button>
-        </span>
         <div id="0" class="red gameButton"></div>
         <div id="1" class="green gameButton"></div>
         <div id="2" class="blue gameButton"></div>
         <div id="3" class="yellow gameButton"></div>
     </main>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 correctAnswers = [];
 currentAnswers = [];
 score = 0;
-
+highscore = 0;
 function gameLoop() {
     $("#score").text(score);
     //On every new round, clear the current answers
@@ -42,11 +42,16 @@ function checkScore() {
 }
 
 function loss() {
-    alert("You lost - make this not use an alert later")
+    //alert("You lost - make this not use an alert later")
+    if (score > highscore){
+        highscore = score;
+        $("#hiscore").text(highscore);
+    }
     score = 0
     currentAnswers = []
     correctAnswers = []
     $("#aside > #start").show();
+    $(".gameButton").hide();
 }
 
 
@@ -54,6 +59,7 @@ function loss() {
 $("#aside > #start").on('click', function () {
     gameLoop();
     $("#aside > #start").hide();
+    $(".gameButton").show();
 });
 
 $(".gameButton").on('click', function () {
