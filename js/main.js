@@ -42,7 +42,6 @@ function checkScore() {
 }
 
 function loss() {
-    //alert("You lost - make this not use an alert later")
     if (score > highscore){
         highscore = score;
         $("#hiscore").text(highscore);
