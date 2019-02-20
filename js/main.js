@@ -4,7 +4,6 @@ score = 0;
 highscore = 0;
 function gameLoop() {
     $("#score").text(score);
-    //On every new round, clear the current answers
     correctAnswers.push(Math.floor(Math.random() * 4));
     flashCorrectAnswers();
 }

@@ -41,6 +41,7 @@ aside {
     background: red;
     margin: 5px;
     z-index: 1;
+    border:3px solid black;
     
 
 }
