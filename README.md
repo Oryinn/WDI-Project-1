@@ -1,6 +1,6 @@
-#Jordan Williams - WDI Says
+# Jordan Williams - WDI Says
 
-##Deliverable: https://peaceful-lewin-6d59ad.netlify.com
+## Deliverable: https://peaceful-lewin-6d59ad.netlify.com
 
 ### Trello: https://trello.com/b/YlImSMZi/wdi-project-1
 
