@@ -10,3 +10,6 @@ Simon says is a memory game that plays a sequence of colors and has the user rep
 
 Wireframe:
 ![Wireframe](https://i.imgur.com/cHQeVEs.jpg)
+
+
+Version 2: I would like to make my css layout more creative, change my game area from 4 divs, and create seperate difficulty selectors
