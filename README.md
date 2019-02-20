@@ -9,4 +9,4 @@ Simon says is a memory game that plays a sequence of colors and has the user rep
 
 
 Wireframe:
-![Wireframe](https://i.imgur.com/undefined.jpg)
+![Wireframe](https://i.imgur.com/cHQeVEs.jpg)
