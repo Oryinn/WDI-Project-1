@@ -41,36 +41,35 @@ aside {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    margin: 2px;
+    margin: 1px;
 }
 .greenContainer {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    margin: 2px;
+    margin: 1px;
 }
 .blueContainer {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    margin: 2px;
+    margin: 1px;
 }
 .yellowContainer {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 2px;
+    margin: 1px;
 }
 .red {
     height: 100px;
     width: 100px;
     background: red;
-    /* margin: 5px; */
     z-index: 1;
     border: 1px solid black;
     display: flex;
     justify-content: flex-end;
-
+    border-radius: 50px 0px 0px 0px;
 
 }
 .green {
@@ -80,6 +79,7 @@ aside {
     z-index: 1;
     justify-content: start;
     border: 1px solid black;
+    border-radius: 0px 50px 0px 0px;
 
 }
 .blue {
@@ -88,6 +88,7 @@ aside {
     background: blue;
     z-index: 1;
     border: 1px solid black;
+    border-radius: 0px 0px 0px 50px;
 
 }
 .yellow {
@@ -96,6 +97,7 @@ aside {
     background: yellow;
     z-index: 1;
     border: 1px solid black;
+    border-radius: 0px 0px 50px 0px;
 
 }
 .hide {
